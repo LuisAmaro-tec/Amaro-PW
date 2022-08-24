@@ -62,3 +62,7 @@ Uno de los hobbys que tengo despues de la escuela y el trabajo son :
 ![Tochito](tochito)
 
 Por el momento estoy estudiando y trabajando, pero si en dado caso se me llega a complicar de mas, buscare la manera de medir mis tiempos y poder estar bien tanto en la escuela como en el trabajo.
+
+Una de las frases que mas me gusta es :
+> "Son carreras no carreritas."
+> -Luis Amaro 2022 
