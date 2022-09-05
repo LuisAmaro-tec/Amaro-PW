@@ -1,0 +1,64 @@
+.cajaRelativa{
+    position: relative;
+    width: 350px;
+    height: 250px;
+    border: 10px solid rgb(255, 208, 0);
+    overflow: scroll;
+}
+.CajaAbsoluta{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border: 10px solid rgb(62, 241, 143);
+    top: 250px;
+    left: 50px;
+    background: linear-gradient(45deg,rgb(24, 108, 235),rgb(145, 192, 157));
+}
+#cajaabsoluta1{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border: 10px solid rgb(62, 241, 143);
+    top: 250px;
+    left: 50px;
+    background: linear-gradient(45deg,rgb(24, 108, 235),rgb(145, 192, 157));
+
+}
+
+#cajaabsoluta2{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border: 10px solid rgb(62, 241, 143);
+    top: 150px;
+    left: 300px;
+    background: linear-gradient(45deg,rgb(235, 24, 112),rgb(52, 153, 248));
+}
+
+#caja2{
+    left: 100px;
+}
+.cajaFija{
+    width: 150px;
+    height: 200px;
+    position: fixed;
+    top: 70px;
+    right: 330px;
+    border: solid purple;
+    background-color: aquamarine;
+}
+
+.cajaSticky{
+    width: 50px;
+    height: 150px;
+    position: sticky;
+    border: 5px solid black;
+    background-color: black;
+}
+
+img{
+    width: 70px;
+    height: 70px;
+    align-items: center; 
+}
+
