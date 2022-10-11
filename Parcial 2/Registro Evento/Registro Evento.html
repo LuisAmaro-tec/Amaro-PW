@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="RegistroEvento.css" type="text/css">
+</head>
+<body>
+    <div class="contenedor">
+        <div id="caja1" class="caja" onclick="alert('Prueba de Boton')"> Logo Facebook <p align="center"><img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-0.png"></p></div>
+        <div id="caja2" class="caja"> Logo Instagram <p align="center"><img src="https://es.logodownload.org/wp-content/uploads/2018/10/instagram-logo1-1024x1024.png"></p></div>
+        <div id="caja3" class="caja"> Logo Twitter <p align="center"><img src="https://es.logodownload.org/wp-content/uploads/2020/01/twitter-logo-81.png"></p></div>
+        <div id="caja4" class="caja"> Logo Reddit <p align="center"><img src="https://blog.lastpass.com/wp-content/uploads/sites/20/2020/04/reddit-logo-2.jpg"></p></div>
+        <div id="caja5" class="caja"> Logo Youtube <p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"></p></div>
+        <div id="caja6" class="caja"> Logo Netflix <p align="center"><img src="https://brandemia.org/contenido/subidas/2016/06/cabecera_netflix-960x640.jpg"></p></div>
+    </div>
+
+    <script>
+        //En las propiedades del elemento en el DOM
+        document.getElementById("caja3").onclick = function() {alert("Click en la caja 3")};
+
+        //Usando addEventListener
+        document.querySelector('#caja2').addEventListener("click",miFuncion1);
+
+        function miFuncion1() {alert("Le haz dado click a la caja2 / Funcion1");}
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor{
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(55deg,rgb(79, 110, 248),rgb(139, 226, 162));
+}
+
+.caja{
+    float: left;
+    border: 2px;
+    /*width: 100px;*/
+    width: calc((100% / 6) - 4px);
+    height: 100px;
+    margin: 2px;
+    text-align: center;
+    border: 4px solid rgb(17, 17, 6);
+    background-color: rgb(240, 255, 152);
+}
+
+div .caja{
+    color: rgb(31, 3, 3);
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+
+div img{
+    width: 50px;
+    height: 50px;
+}
+
+@media screen and (max-width : 500px) and (max-width : 700px) {
+/* Estilos aplicables a pantallas ABAJO de 800px*/
+    #caja4{
+    clear: left;
+}
+.caja{
+    width: calc((100% / 3) - 4px);
+} 
+
+@media screen and (max-width : 450px) and (max-width : 500px) {
+    /* Estilos aplicables a pantallas ABAJO de 800px*/
+        #caja2{
+        clear: left;
+    }
+    .caja{
+        width: calc((100% / 3) - 4px);
+    }  
+
+}
+
+@media screen and (max-width : 450px) and (max-width : 500px) {
+    /* Estilos aplicables a pantallas ABAJO de 800px*/
+        #caja4{
+        clear: left;
+    }
+    .caja{
+        width: calc((100% / 3) - 4px);
+    }  
+
+}
+
+
+@media screen and (max-width : 350px){
+    /* Estilos aplicables solo en el rango de pixeles especificados */
+    .caja{ clear: left;
+        width: calc(100% - 4px);
+    }  
+    
+}
+
+}
