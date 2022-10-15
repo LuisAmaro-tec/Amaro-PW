@@ -1,0 +1,75 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor
+{
+    width: 100vw;
+    height: 100vw;
+}
+
+div.sidebar
+{
+    position: static;
+    background: rgb(99, 130, 158);
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+
+}
+
+a
+{
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+}
+
+a:hover
+{
+    background-color: blue;
+    color: white;
+}
+
+div.content
+{
+    position: fixed;
+    float: left;
+    width: calc(100% - 200px);
+    background: linear-gradient(45deg,rgb(117, 159, 221),rgb(153, 199, 165));
+    padding: 5px 16px;
+    height: 100%;
+}
+
+.contenidoOpcion
+{
+    display: none;
+}
+
+input {display: none;}
+
+input:checked + .sidebar
+{
+   display: none;
+}
+
+@media screen 
+{
+    div.sidebar
+    {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+    .sidebar a {float: left;}
+
+    div.content {margin-left: 0; width: 100%;}
+}
+
+
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegacion de Eventos</title>
+    <link rel="stylesheet" href="DelegacionEvento.css" type="text/css">
+</head>
+<body>
+    <div id="cont" class="contenedor">
+        <div id="caja1" class="caja">Caja1</div>
+        <div id="caja2" class="caja">Caja2</div>
+        <div id="caja3" class="caja">Caja3</div>
+        <div id="caja4" class="caja">Caja4</div>
+        <div id="caja5" class="caja">Caja5</div>
+        <div id="caja6" class="caja">Caja6</div>
+        <div id="caja7" class="caja">Caja7</div>
+        <div id="caja8" class="caja">Caja8</div>
+        <div id="caja9" class="caja">Caja9</div>
+    </div>
+
+    <script>
+        var elem = document.getElementById("cont");
+        elem.addEventListener("click",cambiarCaja);
+
+        function cambiarCaja(evento){
+            console.log(evento);
+
+            if (document.getElementById(evento.target.id).classList.contains("caja")){
+                let res = document.getElementById(evento.target.id).classList.toggle("caja")
+                if(res){
+                document.getElementById(evento.target.id).className.replace("CambioCaja")
+                 }else{
+                    document.getElementById(evento.target.id).classList.toggle("caja")
+                 }
+            }
+
+            //Elimina evento
+            if (evento.target.id=="caja9"){
+                elem.removeEventListener("click",cambiarCaja);
+            }
+        }
+    </script>
+</body>
+</html>
