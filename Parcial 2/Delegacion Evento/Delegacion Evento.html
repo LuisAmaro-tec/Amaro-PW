@@ -21,6 +21,7 @@
     </div>
 
     <script>
+        window.onload=function(){
         var elem = document.getElementById("cont");
         elem.addEventListener("click",cambiarCaja);
 
@@ -41,6 +42,12 @@
                 elem.removeEventListener("click",cambiarCaja);
             }
         }
+    }
+
+         document.getElementById("cont").addEventListener("click",function(event)
+         {
+             event.target.innerHTML = "CambioCaja";
+         });
     </script>
 </body>
 </html>
