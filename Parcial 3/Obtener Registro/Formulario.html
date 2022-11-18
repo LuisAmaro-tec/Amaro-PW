@@ -4,85 +4,98 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Formluraio</title>
+  <title>Formulario</title>
+  <link rel="stylesheet" href="estiloFormulario.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
 <body>
-  <center>
-    <h1>Formulario Equipos de futbol</h1>
-  </center>
+  <div class="contenedor">
+    <h1>Registro para Jugadores</h1>
+    <p><img
+        src="https://ichef.bbci.co.uk/news/640/cpsprodpb/13C65/production/_123979908_83818cee-5485-45eb-ae32-66452a1ab42b.jpg" />
+    </p>
+  </div>
 
   <form>
-    <div class="row">
 
-      <div class="form-group col-sm-2 col-md-2 col-lg-2">
-        <label for="idJugador" class="form-label">IdJugador</label>
-        <input type="text" class="form-control" id="idJugador">
+    <div class="form">
+
+      <div class="row">
+
+        <div class="form-group col-sm-2 col-md-2 col-lg-2">
+          <label for="idJugador" class="form-label">IdJugador</label>
+          <input type="text" class="form-control" id="idJugador">
+        </div>
+
+        <div class="form-group col-sm-12 col-md-8">
+          <label for="Equipo" class="form-label">Seleccion Nacional</label>
+          <input type="text" class="form-control" id="Equipo" aria-describedby="emailHelp">
+        </div>
+
       </div>
 
-      <div class="form-group col-sm-12 col-md-4 col-lg-2">
-        <label for="Nombre" class="form-label">Nombres</label>
-        <input type="text" class="form-control" id="Nombre" aria-describedby="emailHelp">
+      <div class="row">
+
+        <div class="form-group col-sm-12 col-md-10 col-lg-12">
+          <label for="Nombre" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="Nombre" aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group col-sm-12 col-md-10 col-lg-12">
+          <label for="ApellidoP" class="form-label">Apellido Paterno</label>
+          <input type="text" class="form-control" id="ApellidoP">
+        </div>
+
+        <div class="form-group col-sm-12 col-md-10 col-lg-12">
+          <label for="ApellidoM" class="form-label">Apellido Materno</label>
+          <input type="text" class="form-control" id="ApellidoM">
+        </div>
+
       </div>
 
-      <div class="form-group col-sm-12 col-md-4 col-lg-2">
-        <label for="ApellidoP" class="form-label">Apellido Paterno</label>
-        <input type="text" class="form-control" id="ApellidoP">
+      <div class="row">
+
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="Posicion" class="form-label">Posicion</label>
+          <input type="text" class="form-control" id="Posicion">
+        </div>
+
+        <div class="form-group col-sm-12 col-md-4">
+          <label for="NumCamisa" class="form-label"># Camisa</label>
+          <input type="text" class="form-control" id="NumCamisa">
+        </div>
+
       </div>
 
-      <div class="form-group col-sm-12 col-md-4 col-lg-2">
-        <label for="ApellidoM" class="form-label">Apellido Materno</label>
-        <input type="text" class="form-control" id="ApellidoM">
+      <div class="row">
+
+        <div class="form-group col-sm-12 col-md-4 col-lg-4">
+          <label for="Faltas" class="form-label">Faltas</label>
+          <input type="text" class="form-control" id="Faltas" aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group col-sm-12 col-md-4 col-lg-4">
+          <label for="TarjetasA" class="form-label">Tarjetas Amarillas</label>
+          <input type="text" class="form-control" id="TarjetasA">
+        </div>
+
+        <div class="form-group col-sm-12 col-md-4 col-lg-4">
+          <label for="TarjetasR" class="form-label">Tarjetas Rojas</label>
+          <input type="text" class="form-control" id="TarjetasR">
+        </div>
+
       </div>
 
+      <div class="botones">
+        <button type="button" id="btnGetReg" class="btn btn-primary">Traer Registro</button>
+
+        <button type="button" id="btnBorrar" class="btn btn-primary">Borrar Registro</button>
+      </div>
+
+      </script>
     </div>
-
-    <div class="row">
-
-      <div class="form-group col-sm-12 col-md-6">
-        <label for="Equipo" class="form-label">Equipo</label>
-        <input type="text" class="form-control" id="Equipo" aria-describedby="emailHelp">
-      </div>
-
-      <div class="form-group col-sm-12 col-md-6">
-        <label for="Posicion" class="form-label">Posicion</label>
-        <input type="text" class="form-control" id="Posicion">
-      </div>
-
-      <div class="form-group col-sm-12 col-md-6">
-        <label for="NumCamisa" class="form-label"># Camisa</label>
-        <input type="text" class="form-control" id="NumCamisa">
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="form-group col-sm-12 col-md-6 col-lg-4">
-        <label for="Faltas" class="form-label">Faltas</label>
-        <input type="text" class="form-control" id="Faltas" aria-describedby="emailHelp">
-      </div>
-
-      <div class="form-group col-sm-12 col-md-6 col-lg-4">
-        <label for="TarjetasA" class="form-label">Tarjetas Amarillas</label>
-        <input type="text" class="form-control" id="TarjetasA">
-      </div>
-
-      <div class="form-group col-sm-12 col-md-12 col-lg-4">
-        <label for="TarjetasR" class="form-label">Tarjetas Rojas</label>
-        <input type="text" class="form-control" id="TarjetasR">
-      </div>
-
-    </div>
-
-    <button type="button" id="btnGetReg" class="btn btn-primary">Traer Registro</button>
-
-    <right><button style="margin: 10px" type="button" id="btnBorrar" class="btn btn-primary">Borrar Registro</button>
-    </right>
-
-    </script>
 
   </form>
 
