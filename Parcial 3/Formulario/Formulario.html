@@ -6,18 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulario</title>
     <link rel="stylesheet" href="estiloFormulario.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="module" src="agregar.js"></script>
+    <script type="module" src="consultar.js"></script>
+    <script type="module" src="editar.js"></script>
+    <script type="module" src="eliminar.js"></script>
 </head>
 
 <body>
-    <div class="contenedor">
+    <div class="contenedor position-absolute top-0 start-30 p-2">
         <h1>Registro para Jugadores</h1>
-        <p><img
-                src="https://ichef.bbci.co.uk/news/640/cpsprodpb/13C65/production/_123979908_83818cee-5485-45eb-ae32-66452a1ab42b.jpg" />
-        </p>
 
-        <form>
+
+
+        <form id="Form-Emp" class="mt-5">
 
             <div class="form">
 
@@ -25,12 +30,12 @@
 
                     <div class="form-group col-sm-2 col-md-2 col-lg-2">
                         <label for="idJugador" class="form-label">IdJugador</label>
-                        <input type="text" class="form-control" id="idJugador">
+                        <input type="text" class="form-control" id="idJugador" name="idJugador">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-8">
                         <label for="Equipo" class="form-label">Seleccion Nacional</label>
-                        <input type="text" class="form-control" id="Equipo" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="Equipo" name="Equipo" aria-describedby="emailHelp">
                     </div>
 
                 </div>
@@ -39,17 +44,17 @@
 
                     <div class="form-group col-sm-12 col-md-10 col-lg-12">
                         <label for="Nombre" class="form-label">Nombres</label>
-                        <input type="text" class="form-control" id="Nombre" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="Nombre" name="Nombre" aria-describedby="emailHelp">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-10 col-lg-12">
                         <label for="ApellidoP" class="form-label">Apellido Paterno</label>
-                        <input type="text" class="form-control" id="ApellidoP">
+                        <input type="text" class="form-control" id="ApellidoP" name="ApellidoP">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-10 col-lg-12">
                         <label for="ApellidoM" class="form-label">Apellido Materno</label>
-                        <input type="text" class="form-control" id="ApellidoM">
+                        <input type="text" class="form-control" id="ApellidoM" name="ApellidoM">
                     </div>
 
                 </div>
@@ -58,12 +63,12 @@
 
                     <div class="form-group col-sm-12 col-md-6">
                         <label for="Posicion" class="form-label">Posicion</label>
-                        <input type="text" class="form-control" id="Posicion">
+                        <input type="text" class="form-control" id="Posicion" name="Posicion">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-4">
                         <label for="NumCamisa" class="form-label"># Camisa</label>
-                        <input type="text" class="form-control" id="NumCamisa">
+                        <input type="text" class="form-control" id="NumCamisa" name="NumCamisa">
                     </div>
 
                 </div>
@@ -72,30 +77,104 @@
 
                     <div class="form-group col-sm-12 col-md-4 col-lg-4">
                         <label for="Faltas" class="form-label">Faltas</label>
-                        <input type="text" class="form-control" id="Faltas" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="Faltas" name="Faltas" aria-describedby="emailHelp">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-4 col-lg-4">
                         <label for="TarjetasA" class="form-label">Tarjetas Amarillas</label>
-                        <input type="text" class="form-control" id="TarjetasA">
+                        <input type="text" class="form-control" id="TarjetasA" name="TarjetasA">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-4 col-lg-4">
                         <label for="TarjetasR" class="form-label">Tarjetas Rojas</label>
-                        <input type="text" class="form-control" id="TarjetasR">
+                        <input type="text" class="form-control" id="TarjetasR" name="TarjetasR">
                     </div>
 
                 </div>
 
                 <div class="botones">
-                    <button type="button" id="btnGetReg" class="btn btn-primary">Traer Registro</button>
 
-                    <button type="button" id="btnBorrar" class="btn btn-primary">Borrar Registro</button>
+                    <button id="b_agregar" type="button" class="btn btn-primary">Agregar</button>
+
+                    <button type="button" class="btn btn-secondary bg-primary bg-gradient" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-square" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path
+                                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
+                        </svg>
+                        Consultar
+                    </button>
+
+                    <!-- Modal Consultar-->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Buscar Jugador</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="nombre" class="form-label">Ingrese id del jugador:</label>
+                                    <input type="text" class="form-control" id="id_jugador" name="id_jugador">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary" id="buscar">Confirmar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary bg-warning bg-gradient" id="editar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pencil" viewBox="0 0 16 16">
+                            <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                        </svg>
+                        Editar
+                    </button>
+
+                    <button type="button" class="btn btn-primary bg-danger bg-gradient" id="eliminar"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-x-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                        Eliminar
+                    </button>
+
+                    <!-- Modal Eliminar-->
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel2">Eliminar Jugador</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="nombre-Eliminar" class="form-label">Ingrese id del Jugador:</label>
+                                    <input type="text" class="form-control" id="IdJugador" name="IdJugador">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary" id="eliminar">Confirmar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                </script>
             </div>
-
         </form>
     </div>
 
@@ -103,47 +182,6 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
         </script>
 
-    <script>
-
-        /*document.getElementById("btnGetReg").addEventListener("click", function () {
-          fetch('GetReg.php')
-            .then(respuesta => respuesta.json())
-            .then(dato => console.log(dato));
-        });
-     
-        function displayCampos(reg) {
-          console.log(reg);
-          document.getElementById("idJugador").value = reg.idJugador
-          document.getElementById("Nombre").value = reg.Nombre
-        }*/
-
-        document.getElementById("btnGetReg").addEventListener("click", async () => {
-            let respuesta = await fetch('GetReg.php');
-            let dato = await respuesta.json();
-            document.getElementById("idJugador").value = dato.id
-            document.getElementById("Nombre").value = dato.nombre
-            document.getElementById("ApellidoP").value = dato.apellidoP
-            document.getElementById("ApellidoM").value = dato.apellidoM
-            document.getElementById("Equipo").value = dato.equipo
-            document.getElementById("Posicion").value = dato.posicion
-            document.getElementById("NumCamisa").value = dato.numCamisa
-
-        });
-
-        document.getElementById("btnBorrar").addEventListener("click", async () => {
-            let respuesta = await fetch('Borrar.php');
-            let dato = await respuesta.json();
-            document.getElementById("idJugador").value = dato.id
-            document.getElementById("Nombre").value = dato.nombre
-            document.getElementById("ApellidoP").value = dato.apellidoP
-            document.getElementById("ApellidoM").value = dato.apellidoM
-            document.getElementById("Equipo").value = dato.equipo
-            document.getElementById("Posicion").value = dato.posicion
-            document.getElementById("NumCamisa").value = dato.numCamisa
-        });
-
-
-    </script>
 </body>
 
 </html>
